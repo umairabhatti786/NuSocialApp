@@ -27,6 +27,8 @@ import PostFive from "../../../components/PostFive";
 import { useRoute } from "@react-navigation/native";
 import ProfileSocialButton from "./ProfileSocialButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import CustomModal from "../../../components/CustomModal";
+import CustomButton from "../../../components/CustomButton";
 type Props = {
   navigation?: any;
   items?: any;
@@ -38,7 +40,10 @@ const Profile = ({ navigation }: Props) => {
   const image = route?.params?.item?.image;
   const title = route?.params?.item?.title;
   console.log(image, title);
+  const [isModalVisible, setModalVisible] = useState(false);
+
   const [isLogin, setIslogin] = useState("");
+  console.log("isLogin", isLogin);
 
   const [isFolowing, setIsFolowing] = useState("+");
   const [selectedTab, setSelectedTab] = useState<any>("Profile");
@@ -55,6 +60,13 @@ const Profile = ({ navigation }: Props) => {
         <CustomMenu
           navigation={navigation}
           text="Profile"
+          onPressAdd={() => {
+            if (isLogin == "disActive") {
+              setModalVisible(true);
+
+              return;
+            }
+          }}
           isAddButton
           onPressLiveChat={() => {
             navigation.navigate("LiveChat");
@@ -93,6 +105,11 @@ const Profile = ({ navigation }: Props) => {
             <View>
               <Pressable
                 onPress={() => {
+                  if (isLogin == "disActive") {
+                    setModalVisible(true);
+
+                    return;
+                  }
                   setIsFolowing((prev) => (prev === "+" ? "-" : "+"));
                 }}
                 style={{ flex: 2 }}
@@ -107,44 +124,46 @@ const Profile = ({ navigation }: Props) => {
                 />
               </Pressable>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                gap: 10,
-                justifyContent: "center",
-              }}
-            >
-              <ProfileSocialButton
-                borderColor={colors.primary}
-                icon={images.chat}
-                bgColor={colors.white}
-                onPress={() => {
-                  navigation.navigate("ChatMessageList", {
-                    image: image,
-                    title: title,
-                  });
+            {isFolowing == "-" && (
+              <View
+                style={{
+                  flexDirection: "row",
+                  gap: 10,
+                  justifyContent: "center",
                 }}
-              />
-              <ProfileSocialButton
-                borderColor={colors.primary}
-                icon={images.call1}
-                bgColor={colors.primary}
-                onPress={() => {
-                  navigation.navigate("VoiceCall", { image: image });
-                }}
-              />
-              <ProfileSocialButton
-                borderColor={colors.primary}
-                icon={images.video}
-                bgColor={colors.white}
-                imageStyle={{
-                  tintColor: colors.primary,
-                }}
-                onPress={() => {
-                  navigation.navigate("VideoCall", { image: image });
-                }}
-              />
-            </View>
+              >
+                <ProfileSocialButton
+                  borderColor={colors.primary}
+                  icon={images.chat}
+                  bgColor={colors.white}
+                  onPress={() => {
+                    navigation.navigate("ChatMessageList", {
+                      image: image,
+                      title: title,
+                    });
+                  }}
+                />
+                <ProfileSocialButton
+                  borderColor={colors.primary}
+                  icon={images.call1}
+                  bgColor={colors.primary}
+                  onPress={() => {
+                    navigation.navigate("VoiceCall", { image: image });
+                  }}
+                />
+                <ProfileSocialButton
+                  borderColor={colors.primary}
+                  icon={images.video}
+                  bgColor={colors.white}
+                  imageStyle={{
+                    tintColor: colors.primary,
+                  }}
+                  onPress={() => {
+                    navigation.navigate("VideoCall", { image: image });
+                  }}
+                />
+              </View>
+            )}
           </View>
         </View>
         <View
@@ -200,21 +219,160 @@ const Profile = ({ navigation }: Props) => {
         />
         {selectedTab === "Profile" ? (
           <>
-            <PostOne />
-            <PostTwo />
+            <PostOne
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
+            <PostTwo
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
           </>
         ) : selectedTab === "Forums" ? (
           <>
-            <PostThree />
-            <PostFour />
+          {
+            isLogin!="disActive"?(
+                           <PostFive />
+
+
+            ):(
+              <>
+               <PostThree
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
+            <PostFour
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
+              </>
+              
+            )
+            
+          }
+           
           </>
         ) : (
           <>
-            <PostOne />
-            <PostFive />
+            <PostOne
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
+            <PostTwo
+              onRepost={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+              onShare={() => {
+                if (isLogin == "disActive") {
+                  setModalVisible(true);
+
+                  return;
+                }
+              }}
+            />
+            {/* <PostFive /> */}
           </>
         )}
       </View>
+
+      <CustomModal
+        isModalVisible={isModalVisible}
+        setModalVisible={setModalVisible}
+        height={180}
+        width={"70%"}
+      >
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            marginTop: 10,
+          }}
+        >
+          <CustomText
+            text={"Would you like to login?"}
+            weight={700}
+            size={16}
+            fontFam={font.inter}
+          />
+          <CustomButton
+            text="Next"
+            height={38}
+            onPress={async () => {
+              setModalVisible(false);
+              await AsyncStorage.removeItem("isLogin");
+
+              navigation.navigate("Register");
+            }}
+            width={120}
+            borderRadius={32}
+            style={{ marginTop: 30 }}
+          />
+        </View>
+      </CustomModal>
     </ScreenLayout>
   );
 };

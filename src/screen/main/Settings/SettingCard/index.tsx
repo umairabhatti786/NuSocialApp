@@ -10,13 +10,15 @@ type Props = {
 }
 
 const SettingCard = ({ text }: Props) => {
-    const [isOn, setIsOn] = useState(false);
+    const [isOn, setIsOn] = useState(true);
     return (
         <CustomView
+        width={320}
             innerButtonStyle={{
                 justifyContent: "space-between",
                 alignItems: "center",
                 flexDirection: "row",
+                
                 paddingHorizontal: 15
             }}
         >

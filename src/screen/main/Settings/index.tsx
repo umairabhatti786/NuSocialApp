@@ -33,7 +33,7 @@ const Settings = ({ navigation }: Props) => {
                 </View>
                 <View
                     style={{
-                        gap: 40,
+                        gap: 30,
                         marginTop: 50
                     }}
                 >

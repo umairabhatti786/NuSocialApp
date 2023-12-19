@@ -95,8 +95,8 @@ const PostFive = ({ }: Props) => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}
-                        height={150}
-                        width={120}
+                        height={170}
+                        width={170}
                         innerButtonStyle={{
                             paddingTop: 20,
                             paddingLeft: 10,

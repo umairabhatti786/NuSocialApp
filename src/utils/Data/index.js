@@ -4,7 +4,7 @@ export const trendingBlog = [
     {
         title: "Nu",
         image: images.profile,
-        isFollowing: true
+        isFollowing: false
     },
     {
         title: "Blockchain3",
@@ -14,7 +14,7 @@ export const trendingBlog = [
     {
         title: "Loadedblock",
         image: images.profile3,
-        isFollowing: true
+        isFollowing: false
     },
     {
         title: "Global",
@@ -24,12 +24,12 @@ export const trendingBlog = [
     {
         title: "Curlytech",
         image: images.profile,
-        isFollowing: true
+        isFollowing: false
     },
     {
         title: "Foodcritic",
         image: images.profile2,
-        isFollowing: true
+        isFollowing: false
     },
     {
         title: "Thelatestnu",
@@ -49,7 +49,7 @@ export const trendingBlog = [
     {
         title: "Foodcritic",
         image: images.profile2,
-        isFollowing: true
+        isFollowing: false
     },
     {
         title: "Thelatestnu",
@@ -64,7 +64,7 @@ export const trendingBlog = [
     {
         title: "Huntnetwork",
         image: images.profile,
-        isFollowing: true
+        isFollowing: false
     },
 ]
 

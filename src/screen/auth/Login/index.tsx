@@ -46,7 +46,7 @@ const Login = ({ navigation }: Props) => {
                     />
                 </View>
                 <View style={{
-                    rowGap: 10,
+                    // rowGap: 10,
                     marginTop: 100,
                 }}>
                     <CustomText
@@ -54,7 +54,7 @@ const Login = ({ navigation }: Props) => {
                         size={18}
                         fontFam='Poppins'
                         weight={700}
-                        style={{ zIndex: 999, marginLeft: 10 }}
+                        style={{ zIndex: 999,}}
                     />
                     <CustomView
                         outerStyle={{
@@ -74,7 +74,7 @@ const Login = ({ navigation }: Props) => {
                         size={18}
                         fontFam='Poppins'
                         weight={700}
-                        style={{ zIndex: 999, marginLeft: 5, marginTop: 40, marginBottom: 15 }}
+                        style={{ zIndex: 999, marginTop: 40,marginBottom: 15 }}
                     />
                     <CodeField
                         ref={ref}
@@ -88,7 +88,7 @@ const Login = ({ navigation }: Props) => {
                         renderCell={({ index, symbol, isFocused }) => (
                             <CustomView
                                 width={50}
-                                angles={140}
+                                angles={130}
                                 height={50}
                                 innerButtonStyle={{
                                     justifyContent: "center",
@@ -103,7 +103,6 @@ const Login = ({ navigation }: Props) => {
                     />
                     <View
                         style={{
-                            marginHorizontal: 30,
                             marginTop: 10
                         }}
                     >
@@ -112,13 +111,13 @@ const Login = ({ navigation }: Props) => {
                             size={16}
                             fontFam='Poppins'
                             weight={400}
-                            style={{ zIndex: 999, marginLeft: 5, marginTop: "10%" }}
+                            style={{ zIndex: 999, marginTop: "10%" }}
                         />
                     </View>
                 </View>
                 <View style={{
                     width: '100%',
-                    marginTop: 50
+                    marginTop:"30%"
                 }}>
                     <CustomButton
                         width={"90%"}
@@ -139,7 +138,7 @@ const Login = ({ navigation }: Props) => {
 
 export default Login
 const styles = StyleSheet.create({
-    root: { justifyContent: "center", gap: 44 },
+    root: { justifyContent: "center", gap: 39, },
     codeFieldRoot: {
         justifyContent: "center",
         alignItems: "center",
@@ -147,6 +146,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         height: 100,
         borderColor: "#092F7459",
+        paddingHorizontal:30
     },
     cell: {
         fontSize: 24,

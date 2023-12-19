@@ -15,6 +15,7 @@ import {
 } from 'react-native-confirmation-code-field';
 import { font } from '../../../utils/font'
 import CustomInput2 from '../../../components/CustomInput2'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 type Props = {
     navigation?: any
 }
@@ -104,8 +105,10 @@ const ProfileComplete = ({ navigation }: Props) => {
                         style={{
                             alignSelf: "center"
                         }}
-                        onPress={() => {
-                            navigation.navigate("Terms")
+                        onPress={async () => {
+                            await AsyncStorage.removeItem("isLogin",);
+
+                            navigation.navigate("BottomNavigator")
                         }}
                     />
                 </View>

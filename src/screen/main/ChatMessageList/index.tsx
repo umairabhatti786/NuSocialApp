@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, Image, ImageBackground, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, ImageBackground, Pressable, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { images } from '../../../assets'
 import CustomText from '../../../components/CustomText'
 import { colors } from '../../../utils/colors'
@@ -35,7 +35,7 @@ const ChatMessageList = ({ navigation }: Props) => {
                         borderBottomLeftRadius: 12,
                         borderBottomRightRadius: 12,
                         justifyContent: "center",
-                        paddingTop: 30,
+                        paddingTop: 40,
                         paddingBottom: 15,
                         paddingHorizontal: 15
                     }}
@@ -47,6 +47,10 @@ const ChatMessageList = ({ navigation }: Props) => {
                             flexDirection: "row",
                         }}
                     >
+                        <TouchableOpacity
+                        activeOpacity={0.6}
+                        onPress={()=>navigation.goBack()}
+                        >
                         <Image
                             source={images.arrow}
                             style={{
@@ -55,12 +59,16 @@ const ChatMessageList = ({ navigation }: Props) => {
                                 resizeMode: "contain"
                             }}
                         />
+
+                        </TouchableOpacity>
+                      
                         <Image
                             source={image || images.profile}
                             style={{
-                                height: 75,
-                                width: 75,
+                                height: 60,
+                                width: 60,
                                 resizeMode: "cover",
+                                marginLeft:10,
                                 borderRadius: 9999
                             }}
                         />
@@ -95,6 +103,12 @@ const ChatMessageList = ({ navigation }: Props) => {
                             marginRight: 10
                         }}
                     >
+                        {/* VoiceCall */}
+                        <TouchableOpacity
+                        onPress={()=>navigation.navigate("VoiceCall")}
+                        >
+
+
                         <Image
                             source={images.call}
                             style={{
@@ -103,6 +117,13 @@ const ChatMessageList = ({ navigation }: Props) => {
                                 resizeMode: "contain"
                             }}
                         />
+                                                </TouchableOpacity>
+
+                                                <TouchableOpacity
+                                                                        onPress={()=>navigation.navigate("VideoCall")}
+
+                                                >
+
                         <Image
                             source={images.video}
                             style={{
@@ -111,6 +132,12 @@ const ChatMessageList = ({ navigation }: Props) => {
                                 resizeMode: "contain"
                             }}
                         />
+
+                                                </TouchableOpacity>
+
+
+
+                        
                     </View>
                 </View>
                 <View style={{

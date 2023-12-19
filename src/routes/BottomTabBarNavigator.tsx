@@ -28,8 +28,8 @@ const BottomNavigator = ({ navigation }: any) => {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: "#121111",
-          height: Platform.OS === "ios" ? 70 : 60,
-          borderRadius: 13,
+          height: 70,
+          // borderRadius: 13,
           position: "absolute",
           paddingHorizontal: "10%",
           borderTopRightRadius: 20,

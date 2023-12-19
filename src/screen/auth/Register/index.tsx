@@ -51,7 +51,7 @@ const Register = ({ navigation }: Props) => {
                     />
                 </View>
                 <View style={{
-                    rowGap: 10,
+                    // rowGap: 10,
                     flex: 1,
                     marginTop: 100,
                 }}>
@@ -60,7 +60,7 @@ const Register = ({ navigation }: Props) => {
                         size={18}
                         fontFam='Poppins'
                         weight={700}
-                        style={{ zIndex: 999, marginLeft: 10 }}
+                        // style={{ zIndex: 999, marginLeft: 10 }}
                     />
                     <CustomView
                         outerStyle={{
@@ -80,7 +80,7 @@ const Register = ({ navigation }: Props) => {
                         size={18}
                         fontFam='Poppins'
                         weight={700}
-                        style={{ zIndex: 999, marginLeft: 5, marginTop: 40, marginBottom: 15 }}
+                        style={{ zIndex: 999, marginTop: 40, marginBottom: 15 }}
                     />
                     <CodeField
                         ref={ref}
@@ -109,7 +109,7 @@ const Register = ({ navigation }: Props) => {
                     />
                     <View
                         style={{
-                            marginHorizontal: 30,
+                            // marginHorizontal: 30,
                             marginTop: 10
                         }}
                     >
@@ -118,12 +118,12 @@ const Register = ({ navigation }: Props) => {
                             size={16}
                             fontFam='Poppins'
                             weight={400}
-                            style={{ zIndex: 999, marginLeft: 5, marginTop: "10%" }}
+                            style={{ zIndex: 999, marginTop: "10%" }}
                         />
                     </View>
                 </View>
                 <View style={{
-                    marginTop: 50
+                    marginTop: "30%"
                 }}>
                     <CustomButton
                         width={"90%"}
@@ -145,7 +145,7 @@ const Register = ({ navigation }: Props) => {
 
 export default Register
 const styles = StyleSheet.create({
-    root: { justifyContent: "center", gap: 44 },
+    root: { justifyContent: "center", gap: 39 },
     codeFieldRoot: {
         justifyContent: "center",
         alignItems: "center",

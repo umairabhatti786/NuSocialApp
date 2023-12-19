@@ -14,6 +14,7 @@ import { font } from "../../../utils/font";
 import { chatList } from "../../../utils/Data";
 import CustomModal from "../../../components/CustomModal";
 import CustomButton from "../../../components/CustomButton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LiveChat = ({ navigation }: any) => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -95,8 +96,10 @@ const LiveChat = ({ navigation }: any) => {
           <CustomButton
             text="Next"
             height={38}
-            onPress={() => {
+            onPress={ async() => {
               setModalVisible(false);
+              await AsyncStorage.removeItem("isLogin");
+
               navigation.navigate("Register");
             }}
             width={120}

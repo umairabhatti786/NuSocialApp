@@ -31,8 +31,8 @@ const ProfileCard = ({ item, navigation }: Props) => {
                 <Image
                     source={item?.image}
                     style={{
-                        width: 94,
-                        height: 94,
+                        width: 90,
+                        height: 90,
                         resizeMode: "cover",
                         borderRadius: 60
                     }}

@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Platform, Image, View } from 'react-native'
+import { Pressable, StyleSheet, Platform, Image, View, TouchableOpacity } from 'react-native'
 import { colors } from '../../utils/colors'
 import CustomText from '../CustomText'
 import React from 'react'
@@ -7,10 +7,12 @@ import ShadowButton from '../ShadowButton'
 import CustomActions from '../CustomActions'
 
 type Props = {
+    onShare:any,
+    onRepost:any,
 
 }
 
-const PostFour = ({ }: Props) => {
+const PostFour = ({onShare,onRepost }: Props) => {
     return (
         <View style={{
             backgroundColor: '#171616',
@@ -38,7 +40,7 @@ const PostFour = ({ }: Props) => {
                         style={{ marginTop: 5 }}
                     />
                     <ShadowButton
-                        onPress={() => { }}
+                        onPress={onShare}
                     >
                         <Image
                             source={images.share}
@@ -100,12 +102,22 @@ const PostFour = ({ }: Props) => {
                     imageHeight={25}
                     imageWidth={25}
                 />
-                <CustomActions
-                    image={images.backArrow}
+              <TouchableOpacity
+                onPress={onRepost}
+                >
+                <Image
+                    source={images.backArrow}
                     style={{
-                        marginLeft: 25
+                        width: 20,
+                        height: 20,
+                        marginLeft: 25,
+                        resizeMode: "contain",
+                        tintColor: "white" ,
+                     
                     }}
                 />
+
+                </TouchableOpacity>
             </View>
         </View>
     )
