@@ -96,7 +96,7 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
               />
             </Pressable>
             <TouchableOpacity
-            activeOpacity={0.6}
+              activeOpacity={0.6}
               onPress={() => {
                 goTo("Profile");
               }}
@@ -116,9 +116,9 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
                 fontFam="Arial"
               />
             </Pressable>
-            <TouchableOpacity 
-            activeOpacity={0.6}
-            onPress={() => goTo("InviteFriends")}>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => goTo("InviteFriends")}>
               <CustomText
                 text={"Invite Friends"}
                 size={16}
@@ -127,8 +127,8 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
               />
             </TouchableOpacity>
             <TouchableOpacity
-            activeOpacity={0.6}
-             onPress={() => goTo("TermsConditions")}>
+              activeOpacity={0.6}
+              onPress={() => goTo("TermsConditions")}>
               <CustomText
                 text={"Privacy Policy"}
                 size={16}
@@ -137,8 +137,8 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
               />
             </TouchableOpacity>
             <TouchableOpacity
-            activeOpacity={0.6}
-             onPress={() => goTo("Home")}>
+              activeOpacity={0.6}
+              onPress={() => goTo("AllBlocks")}>
               <CustomText
                 text={"All Blocks"}
                 size={16}
@@ -147,8 +147,8 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
               />
             </TouchableOpacity>
             <TouchableOpacity
-            activeOpacity={0.6}
-             onPress={() => goTo("Settings")}>
+              activeOpacity={0.6}
+              onPress={() => goTo("Settings")}>
               <CustomText
                 text={"Settings"}
                 size={16}
@@ -157,8 +157,8 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
               />
             </TouchableOpacity>
             <TouchableOpacity
-            activeOpacity={0.6}
-             onPress={() => goTo("Lock")}>
+              activeOpacity={0.6}
+              onPress={() => goTo("Lock")}>
               <CustomText
                 text={"Lock"}
                 size={16}

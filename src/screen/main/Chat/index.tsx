@@ -20,6 +20,7 @@ import { images } from "../../../assets";
 import ShadowButton from "../../../components/ShadowButton";
 import CustomView from "../../../components/CustomView";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import CustomInput from "../../../components/CustomInput";
 type Props = {
   navigation?: any;
 };
@@ -53,7 +54,7 @@ const Chat = ({ navigation }: Props) => {
           }}
         >
           <ShadowButton
-          onPress={()=>navigation.goBack()}
+            onPress={() => navigation.goBack()}
           >
             <Image
               source={images.backArrow}
@@ -65,7 +66,7 @@ const Chat = ({ navigation }: Props) => {
               }}
             />
 
-          
+
           </ShadowButton>
           <CustomText
             text={"Chat"}
@@ -75,11 +76,37 @@ const Chat = ({ navigation }: Props) => {
             style={{ zIndex: 999, marginLeft: "32%" }}
           />
         </View>
+        <CustomView
+          innerButtonStyle={{
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+          outerStyle={{
+            marginVertical: "5%",
+          }}
+          height={54}
+          width={"100%"}
+          borderRadius={32}
+        >
+          <Image
+            source={images.search}
+            style={{
+              width: 37,
+              height: 37,
+              marginLeft: 8
+            }}
+          />
+          <CustomInput
+            height={45}
+            placeholder="Search"
+            textColor={colors.xlightWhite}
+          />
+        </CustomView>
         <FlatList
           data={chatList2}
           contentContainerStyle={{
-            gap: 15,
-            marginVertical: "10%",
+            gap: 10,
+            marginBottom: "8%"
           }}
           scrollEnabled={false}
           renderItem={({ item, index }) => {
@@ -92,7 +119,6 @@ const Chat = ({ navigation }: Props) => {
                   }
                   navigation.navigate("ChatMessageList", {
                     image: item?.image,
-                    // title: title,
                   });
                 }}
                 style={styles.chatList}
@@ -100,51 +126,107 @@ const Chat = ({ navigation }: Props) => {
                 <CustomView
                   innerButtonStyle={{
                     flexDirection: "row",
-                    paddingLeft: 10,
                     alignItems: "center",
                   }}
                   height={75}
+                  width={"100%"}
                 >
-                  <Image style={styles.image} source={item?.image} />
-                  <View style={styles.chat}>
+                  <View
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: 12,
+                      paddingLeft: 10,
+                      alignItems: "center",
+                      flexDirection: "row"
+                    }}
+                  >
+                    <Image style={styles.image} source={item?.image} />
                     <View
                       style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        // width: "100%"
+                        flex: 1,
                       }}
                     >
-                      <CustomText
-                        text={item?.title}
-                        weight={700}
-                        style={{ width: 200 }}
-                        fontFam="Arial"
-                        size={16}
-                      />
-                      {item?.count && (
-                        <ImageBackground
-                          source={images.countBg}
-                          resizeMode={"contain"}
-                          style={{
-                            width: 22,
-                            height: 22.1,
-                            backgroundColor: colors.primary,
-                            borderRadius: 15,
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
-                        >
-                          <CustomText text={item?.count} weight={700} />
-                        </ImageBackground>
-                      )}
+                      <View
+                        style={{
+                          width: "80%",
+                          height: "100%",
+                          justifyContent: "center",
+                          gap: 5,
+                          marginLeft: 10
+                        }}
+                      >
+                        <CustomText
+                          text={item?.title}
+                          weight={700}
+                          style={{ width: 200 }}
+                          fontFam="Arial"
+                          size={14}
+                        />
+                        <CustomText
+                          text={item?.second}
+                          weight={500}
+                          size={11}
+                          color="#7D7D7D"
+                          fontFam="Arial"
+                          numberOfLines={1}
+                        />
+                      </View>
                     </View>
-                    <View style={styles.description}>
+                    <View
+                      style={{
+                        width: "20%",
+                        height: "100%",
+                        justifyContent: "space-between",
+                        paddingVertical: 10,
+                        alignItems: "flex-end",
+                        paddingRight: 10
+                      }}
+                    >
+                      {
+                        item?.count ? (
+                          <ImageBackground
+                            source={images.countBg}
+                            resizeMode={"contain"}
+                            style={{
+                              width: 22,
+                              height: 22.1,
+                              backgroundColor: colors.primary,
+                              borderRadius: 15,
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <CustomText
+                              text={item?.count}
+                              weight={700}
+                              size={10}
+                              fontFam="Arial"
+                            />
+                          </ImageBackground>
+                        )
+                          :
+                          (<ImageBackground
+                            source={images.count2}
+                            resizeMode={"contain"}
+                            style={{
+                              width: 22,
+                              height: 22.1,
+                              borderRadius: 15,
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <CustomText text={item?.count} weight={700} />
+                          </ImageBackground>
+                          )}
                       <CustomText
-                        text={item?.second}
-                        weight={700}
-                        size={12.5}
+                        text={"5 mint ago"}
+                        weight={500}
+                        size={11}
+                        color="#7D7D7D"
                         fontFam="Arial"
+                        numberOfLines={1}
                       />
                     </View>
                   </View>
@@ -216,12 +298,12 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 58,
+    height: 58,
     resizeMode: "cover",
     borderRadius: 99,
-    marginRight: 15,
-    marginLeft: 5,
+    marginRight: 5,
+    marginLeft: 3
   },
   description: {
     flexDirection: "row",

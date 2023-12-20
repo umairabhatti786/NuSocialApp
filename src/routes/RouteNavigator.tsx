@@ -19,6 +19,7 @@ import VoiceCall from "../screen/main/VoiceCall";
 import VideoCall from "../screen/main/VideoCall";
 import ChatMessageList from "../screen/main/ChatMessageList";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import AllBlocks from "../screen/main/AllBlocks";
 export const navigationContainerRef = React.createRef();
 const RouteNavigator = () => {
   const [splashState, setSplashState] = useState(true);
@@ -40,7 +41,7 @@ const RouteNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        // initialRouteName='Login'
+        // initialRouteName='AllBlocks'
       >
         {splashState && <Stack.Screen name="Splash" component={Splash} />}
         <Stack.Screen name="Terms" component={Terms} />
@@ -58,6 +59,7 @@ const RouteNavigator = () => {
         <Stack.Screen name="ProfileComplete" component={ProfileComplete} />
         <Stack.Screen name="Admins" component={Admins} />
         <Stack.Screen name="InviteFriends" component={InviteFriends} />
+        <Stack.Screen name="AllBlocks" component={AllBlocks} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -10,11 +10,13 @@ type Props = {
     style?: any,
     lineHeight?: number
     weight?: number
+    numberOfLines?: number
 }
 
-const CustomText = ({ color, size, fontFam, text, style, lineHeight, weight }: Props) => {
+const CustomText = ({ color, size, fontFam, text, style, lineHeight, weight, numberOfLines }: Props) => {
     return (
         <Text
+            numberOfLines={numberOfLines}
             style={[
                 {
                     color: color || colors.white,

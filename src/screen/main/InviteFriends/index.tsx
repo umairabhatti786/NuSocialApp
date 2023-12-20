@@ -35,12 +35,15 @@ const InviteFriends = ({ navigation }: Props) => {
                             justifyContent: "space-between",
                             alignItems: "center",
                             flexDirection: "row",
-                            paddingHorizontal: 15
+                            height: 54,
+                            paddingHorizontal: 20
                         }}
                     >
                         <CustomText
                             text={"Copy to get code link"}
-                            size={14}
+                            fontFam='Poppins'
+                            size={16}
+                            weight={500}
                         />
                         <ShadowButton
                             onPress={() => {
@@ -48,7 +51,7 @@ const InviteFriends = ({ navigation }: Props) => {
                             }}
                         >
                             <Image
-                                source={images.burgerMenu}
+                                source={images.share}
                                 style={{ width: 22, height: 22 }}
                             />
                         </ShadowButton>
@@ -56,17 +59,23 @@ const InviteFriends = ({ navigation }: Props) => {
                     <View
                         style={{
                             marginTop: "10%",
-                            marginLeft: 10
+                            marginLeft: 10,
+                            rowGap: 10
                         }}
                     >
                         <CustomText
                             text={"1. Invite a friends via your referral code"}
-                            size={17}
+                            size={16}
+                            weight={400}
+                            fontFam='Poppins'
+                            lineHeight={24}
                         />
                         <CustomText
-                            text={"2. Ask your friends to sign up"}
-                            size={17}
-                            style={{ marginTop: 10 }}
+                            text={"2.  Ask your friends to sign up"}
+                            size={16}
+                            weight={400}
+                            fontFam='Poppins'
+                            lineHeight={24}
                         />
                     </View>
                 </View>

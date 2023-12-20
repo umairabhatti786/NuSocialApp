@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LiveChat from "../../screen/main/LiveChat";
 import Profile from "../../screen/main/Profile";
 import Home from "../../screen/main/Home";
+import AllBlocks from "../../screen/main/AllBlocks";
 export const navigationContainerRef = React.createRef();
 const HomeStack = () => {
 
@@ -13,7 +14,8 @@ const HomeStack = () => {
         screenOptions={{ headerShown: false }}
         // initialRouteName='Login'
       >
-                <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="AllBlocks" component={AllBlocks} />
         <Stack.Screen name="LiveChat" component={LiveChat} />
         <Stack.Screen name="Profile" component={Profile} />
       

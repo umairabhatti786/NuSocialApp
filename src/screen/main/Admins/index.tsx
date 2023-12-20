@@ -17,7 +17,11 @@ type Props = {
 
 const Admins = ({ navigation }: Props) => {
     const [values, setValues] = useState([]);
-    const [inputValue, setInputValue] = useState("")
+    const [inputValue, setInputValue] = useState("");
+    const deleteItem = (x: any) => {
+        let newArray = values.filter(item => item !== x);
+        setValues(newArray);
+    }
     return (
         <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: "15%" }} >
             <View style={{
@@ -48,35 +52,7 @@ const Admins = ({ navigation }: Props) => {
                             alignItems: "center"
                         }}
                     >
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: "row"
-                            }}
-                        >
-                            {
-                                values.map((x) => {
-                                    return (
-                                        <TouchableOpacity
-                                            key={x}
-                                            style={{
-                                                paddingHorizontal: 10,
-                                                paddingVertical: 4,
-                                                backgroundColor: colors.primary,
-                                                borderRadius: 12,
-                                                marginHorizontal: 5
-                                            }}
-                                        >
-                                            <CustomText
-                                                text={x}
-                                                size={15}
-                                            />
-                                        </TouchableOpacity>
-                                    )
-                                })
-                            }
-                        </View>
-                        {values.length < 3 && <CustomInput
+                        <CustomInput
                             textColor={'white'}
                             style={{ paddingLeft: 20, width: "100%" }}
                             placeholder={"Add Controllers"}
@@ -85,7 +61,8 @@ const Admins = ({ navigation }: Props) => {
                             }}
                             value={inputValue}
 
-                        />}
+                        />
+
                         <TouchableOpacity
                             style={{
                                 height: "100%",
@@ -111,6 +88,59 @@ const Admins = ({ navigation }: Props) => {
                             />
                         </TouchableOpacity>
                     </CustomView>
+                    <View
+                        style={{
+                            width: "100%",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            marginTop: 20,
+                            gap: 9
+                        }}
+                    >
+                        {
+                            values.map((x) => {
+                                return (
+                                    <View
+                                        key={x}
+                                        style={{
+                                            paddingHorizontal: 10,
+                                            paddingVertical: 4,
+                                            backgroundColor: colors.primary,
+                                            borderRadius: 12,
+                                        }}
+                                    >
+                                        <TouchableOpacity
+                                            style={{
+                                                width: 18,
+                                                height: 18,
+                                                backgroundColor: colors.lightWhite,
+                                                position: "absolute",
+                                                top: -8,
+                                                right: -7,
+                                                borderRadius: 99,
+                                                justifyContent: "center",
+                                                alignItems: "center"
+                                            }}
+                                            onPressOut={() => deleteItem(x)}
+                                        >
+                                            <Image
+                                                style={{
+                                                    width: 10,
+                                                    height: 10,
+                                                    resizeMode: "contain"
+                                                }}
+                                                source={images.cross}
+                                            />
+                                        </TouchableOpacity>
+                                        <CustomText
+                                            text={x}
+                                            size={15}
+                                        />
+                                    </View>
+                                )
+                            })
+                        }
+                    </View>
                     <CustomInput2
                         placeholder='Website (Optional)'
                         onChangeText={(x: any) => {

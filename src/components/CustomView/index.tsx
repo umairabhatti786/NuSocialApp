@@ -12,16 +12,17 @@ type Props = {
     height?: any,
     width?: any,
     angles?: number,
+    borderRadius?: number,
 }
 
-const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, angles }: Props) => {
+const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, angles, borderRadius }: Props) => {
     return (
         <View
             style={{
                 width: width || "100%",
                 height: height || 45,
                 backgroundColor: '#171616',
-                borderRadius: 12,
+                borderRadius: borderRadius || 12,
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
                 position: "relative",
@@ -35,7 +36,7 @@ const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, ang
                 style={{
                     height: "100%",
                     width: "100%",
-                    borderRadius: 12,
+                    borderRadius: borderRadius || 12,
                     position: "absolute",
                 }}
             />
@@ -43,7 +44,7 @@ const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, ang
                 style={{
                     width: width - 2 || "99.5%",
                     height: height - 2 || 45,
-                    borderRadius: 12,
+                    borderRadius: borderRadius || 12,
                     backgroundColor: '#171616',
                     ...innerButtonStyle
                 }}

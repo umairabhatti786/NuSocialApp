@@ -34,4 +34,7 @@ export const images = {
     bgImage: require("./png/bgImage.png"),
     bgImage2: require("./png/bgImage2.png"),
     countBg: require("./png/countBg.png"),
+    mail: require("./png/mail.png"),
+    cross: require("./png/close.png"),
+    count2: require("./png/count2.png"),
 }

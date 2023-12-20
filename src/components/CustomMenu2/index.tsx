@@ -9,13 +9,13 @@ import HomeModal from '../HomeModal'
 type Props = {
     text?: string
     navigation?: any
+    isMail?: any
 }
 
-const CustomMenu2 = ({ text, navigation }: Props) => {
+const CustomMenu2 = ({ text, navigation, isMail }: Props) => {
     return (
         <View
             style={{
-                alignItems: "center",
                 marginTop: 10,
                 zIndex: 20,
             }}
@@ -34,13 +34,27 @@ const CustomMenu2 = ({ text, navigation }: Props) => {
                     }}
                 />
             </Pressable>
-            <CustomText
-                text={text}
-                size={22}
-                fontFam='Poppins'
-                weight={700}
-                style={{ zIndex: 999 }}
-            />
+            <View
+                style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    width: "65%",
+                    alignSelf: "flex-end"
+                }}
+            >
+                <CustomText
+                    text={text}
+                    size={22}
+                    fontFam='Poppins'
+                    weight={700}
+                    style={{ zIndex: 999, alignSelf: "center" }}
+                />
+                {isMail &&
+                    <ShadowButton onPress={() => { }}>
+                        <Image source={images.mail} style={styles.menuButton} />
+                    </ShadowButton>
+                }
+            </View>
         </View>
     )
 }
@@ -54,8 +68,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     menuButton: {
-        width: 24,
-        height: 24,
+        width: 22,
+        height: 22,
         resizeMode: "contain"
     }
 })
