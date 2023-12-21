@@ -3,7 +3,7 @@ import { images } from "../../assets";
 export const trendingBlog = [
     {
         title: "Nu",
-        image: images.profile,
+        image: images.profile6,
         isFollowing: false
     },
     {
@@ -18,7 +18,7 @@ export const trendingBlog = [
     },
     {
         title: "Global",
-        image: images.profile4,
+        image: images.profile5,
         isFollowing: false
     },
     {
@@ -43,7 +43,7 @@ export const trendingBlog = [
     },
     {
         title: "Huntnetwork",
-        image: images.profile,
+        image: images.profile7,
         isFollowing: false
     },
     {

@@ -4,6 +4,7 @@ import {
   Image,
   ImageBackground,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -38,11 +39,10 @@ const Chat = ({ navigation }: Props) => {
     setIsLogin(res);
   };
   return (
-    <ScreenLayout
-      style={{
-        backgroundColor: "#1E1E1E",
-      }}
-    >
+    <ScrollView
+
+    scrollEnabled={true}
+     style={{ backgroundColor: "#1E1E1E" }}>
       <View style={styles.container}>
         <View
           style={{
@@ -53,9 +53,7 @@ const Chat = ({ navigation }: Props) => {
             width: "100%",
           }}
         >
-          <ShadowButton
-            onPress={() => navigation.goBack()}
-          >
+          <ShadowButton onPress={() => navigation.goBack()}>
             <Image
               source={images.backArrow}
               style={{
@@ -65,8 +63,6 @@ const Chat = ({ navigation }: Props) => {
                 tintColor: "white",
               }}
             />
-
-
           </ShadowButton>
           <CustomText
             text={"Chat"}
@@ -84,7 +80,7 @@ const Chat = ({ navigation }: Props) => {
           outerStyle={{
             marginVertical: "5%",
           }}
-          height={54}
+          height={50}
           width={"100%"}
           borderRadius={32}
         >
@@ -93,7 +89,7 @@ const Chat = ({ navigation }: Props) => {
             style={{
               width: 37,
               height: 37,
-              marginLeft: 8
+              marginLeft: 8,
             }}
           />
           <CustomInput
@@ -105,8 +101,8 @@ const Chat = ({ navigation }: Props) => {
         <FlatList
           data={chatList2}
           contentContainerStyle={{
-            gap: 10,
-            marginBottom: "8%"
+            gap: 5,
+            marginBottom: "30%",
           }}
           scrollEnabled={false}
           renderItem={({ item, index }) => {
@@ -138,7 +134,7 @@ const Chat = ({ navigation }: Props) => {
                       borderRadius: 12,
                       paddingLeft: 10,
                       alignItems: "center",
-                      flexDirection: "row"
+                      flexDirection: "row",
                     }}
                   >
                     <Image style={styles.image} source={item?.image} />
@@ -153,7 +149,7 @@ const Chat = ({ navigation }: Props) => {
                           height: "100%",
                           justifyContent: "center",
                           gap: 5,
-                          marginLeft: 10
+                          marginLeft: 10,
                         }}
                       >
                         <CustomText
@@ -180,46 +176,44 @@ const Chat = ({ navigation }: Props) => {
                         justifyContent: "space-between",
                         paddingVertical: 10,
                         alignItems: "flex-end",
-                        paddingRight: 10
+                        paddingRight: 10,
                       }}
                     >
-                      {
-                        item?.count ? (
-                          <ImageBackground
-                            source={images.countBg}
-                            resizeMode={"contain"}
-                            style={{
-                              width: 22,
-                              height: 22.1,
-                              backgroundColor: colors.primary,
-                              borderRadius: 15,
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <CustomText
-                              text={item?.count}
-                              weight={700}
-                              size={10}
-                              fontFam="Arial"
-                            />
-                          </ImageBackground>
-                        )
-                          :
-                          (<ImageBackground
-                            source={images.count2}
-                            resizeMode={"contain"}
-                            style={{
-                              width: 22,
-                              height: 22.1,
-                              borderRadius: 15,
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <CustomText text={item?.count} weight={700} />
-                          </ImageBackground>
-                          )}
+                      {item?.count ? (
+                        <ImageBackground
+                          source={images.countBg}
+                          resizeMode={"contain"}
+                          style={{
+                            width: 22,
+                            height: 22.1,
+                            backgroundColor: colors.primary,
+                            borderRadius: 15,
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <CustomText
+                            text={item?.count}
+                            weight={700}
+                            size={10}
+                            fontFam="Arial"
+                          />
+                        </ImageBackground>
+                      ) : (
+                        <ImageBackground
+                          source={images.count2}
+                          resizeMode={"contain"}
+                          style={{
+                            width: 22,
+                            height: 22.1,
+                            borderRadius: 15,
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <CustomText text={item?.count} weight={700} />
+                        </ImageBackground>
+                      )}
                       <CustomText
                         text={"5 mint ago"}
                         weight={500}
@@ -270,7 +264,7 @@ const Chat = ({ navigation }: Props) => {
           />
         </View>
       </CustomModal>
-    </ScreenLayout>
+    </ScrollView>
   );
 };
 
@@ -303,7 +297,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 99,
     marginRight: 5,
-    marginLeft: 3
+    marginLeft: 3,
   },
   description: {
     flexDirection: "row",

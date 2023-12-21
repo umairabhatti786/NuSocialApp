@@ -19,27 +19,29 @@ import CustomView from "../../../components/CustomView";
 import HomeModal from "../../../components/HomeModal";
 import ProfileCard from "./ProfileCard";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 type Props = {
   navigation?: any;
 };
 
 const Home = ({ navigation }: Props) => {
   const [isLogin, setisLogin] = useState<any>("");
+  const focused=useIsFocused()
   useEffect(() => {
     getLogin();
-  }, []);
+  }, [focused]);
 
   const getLogin = async () => {
     const res = await AsyncStorage.getItem("isLogin");
     setisLogin(res);
   };
-  console.log("isLoginData", isLogin);
+  console.log("isLoginDatasiLogin", isLogin);
 
   return (
     <ScreenLayout style={{}}>
       <View style={styles.container}>
         <CustomMenu
-          isLiveChat={!isLogin == "disActive" ? false : true}
+          isLiveChat={isLogin ==="disActive"?false:true}
           onPressLiveChat={() => {
             navigation.navigate("LiveChat");
           }}

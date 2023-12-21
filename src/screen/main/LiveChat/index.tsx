@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   FlatList,
   Image,
@@ -18,6 +18,16 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LiveChat = ({ navigation }: any) => {
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isLogin, setisLogin] = useState<any>("");
+  useEffect(() => {
+    getLogin();
+  }, []);
+
+  const getLogin = async () => {
+    const res = await AsyncStorage.getItem("isLogin");
+    setisLogin(res);
+  };
+  console.log("isLoginDatasiLogin", isLogin);
   return (
     <ScreenLayout style={{}}>
       <View style={styles.container}>
@@ -40,7 +50,11 @@ const LiveChat = ({ navigation }: any) => {
             return (
               <Pressable
                 onPress={() => {
-                  setModalVisible(true);
+                  if(isLogin=="disActive"){
+                    setModalVisible(true);
+
+
+                  }
                 }}
                 style={styles.chatList}
               >

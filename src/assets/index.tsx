@@ -10,6 +10,10 @@ export const images = {
     profile2: require("./png/profile2.png"),
     profile3: require("./png/profile3.png"),
     profile4: require("./png/profile4.png"),
+    profile5: require("./png/profile5.png"),
+    profile6: require("./png/profile6.png"),
+    profile7: require("./png/profile7.png"),
+
     backArrow: require("./png/backArrow.png"),
     add: require("./png/add.png"),
     post1: require("./png/post1.png"),
