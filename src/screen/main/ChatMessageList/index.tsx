@@ -58,32 +58,19 @@ const ChatMessageList = ({ navigation }: Props) => {
               flexDirection: "row",
             }}
           >
-                      <ShadowButton onPress={() => navigation.goBack()}>
-                      <Image
-              source={images.backArrow}
-              style={{
-                width: 18,
-                height: 18,
-                resizeMode: "contain",
-                tintColor: "white",
-              }}
-            />
-          
-                        </ShadowButton>
-
-            {/* <TouchableOpacity
-              activeOpacity={0.6}
-              onPress={() => navigation.goBack()}
-            >
+            <ShadowButton onPress={() => navigation.goBack()}>
               <Image
-                source={images.arrow}
+                source={images.backArrow}
                 style={{
-                  height: 25,
-                  width: 25,
+                  width: 18,
+                  height: 18,
                   resizeMode: "contain",
+                  tintColor: "white",
                 }}
               />
-            </TouchableOpacity> */}
+
+            </ShadowButton>
+
 
             <Image
               source={image || images.profile}

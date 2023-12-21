@@ -37,7 +37,8 @@ const TermsConditions = ({ navigation }: Props) => {
                     style={{
                         flex: 1,
                         alignItems: 'center',
-                        marginTop: 40
+                        marginTop: 40,
+                        marginHorizontal: "auto"
                     }}
                 >
                     <CustomText
@@ -46,7 +47,7 @@ const TermsConditions = ({ navigation }: Props) => {
                         fontFam='Raleway'
                         weight={400}
                         lineHeight={26.31}
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "evenly" }}
                     />
                 </View>
             </View>

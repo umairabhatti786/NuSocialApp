@@ -16,7 +16,7 @@ const ProfileCard = ({ item, navigation }: Props) => {
                 justifyContent: "center",
                 alignItems: "center",
                 paddingVertical: 2,
-                marginHorizontal: 12
+                width: "33%"
             }}
         >
             <Pressable
@@ -31,8 +31,8 @@ const ProfileCard = ({ item, navigation }: Props) => {
                 <Image
                     source={item?.image}
                     style={{
-                        width: 90,
-                        height: 90,
+                        width: 100,
+                        height: 100,
                         resizeMode: "cover",
                         borderRadius: 60
                     }}

@@ -64,7 +64,8 @@ const PostFive = ({ }: Props) => {
                 alignItems: "center",
                 justifyContent: "flex-end",
                 flexDirection: "row",
-                paddingRight: 20
+                paddingRight: 20,
+                zIndex: 100
             }}>
                 <CustomActions
                     image={images.add}
@@ -91,7 +92,7 @@ const PostFive = ({ }: Props) => {
                             position: "absolute",
                             top: 18,
                             right: 75,
-                            zIndex: 50,
+                            zIndex: 100,
                             justifyContent: "center",
                             alignItems: "center",
                         }}

@@ -19,22 +19,25 @@ const windowHeight = Dimensions.get('window').height;
 const ScreenLayout = ({ navigation, children, title, style, height, isProfileVisible, isLineVisible, linePosition, bgColor, ScrollRef }: Props) => {
     return (
         <>
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={{
-                }}
-                style={{
-                    backgroundColor: bgColor || colors.lightBlack,
-                }}
-                scrollEnabled={true}
-                ref={ScrollRef}
+            <SafeAreaView
+
+                style={{ minHeight: height || "100%", backgroundColor: bgColor || colors.lightBlack }}
             >
-                <SafeAreaView style={{ minHeight: height - 60 || windowHeight - 60, backgroundColor: bgColor || colors.lightBlack }}>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{
+                    }}
+                    style={{
+                        backgroundColor: bgColor || colors.lightBlack,
+                    }}
+                    scrollEnabled={true}
+                    ref={ScrollRef}
+                >
                     <KeyboardAvoidingView
                         style={{
                         }}
                         contentContainerStyle={{
-                            minHeight: height ? height - 60 : windowHeight - 60
+                            flex: 1
                         }}
                     >
                         <StatusBar
@@ -97,9 +100,8 @@ const ScreenLayout = ({ navigation, children, title, style, height, isProfileVis
                             }}
                         />
                     </KeyboardAvoidingView>
-                </SafeAreaView >
-            </ScrollView >
-
+                </ScrollView >
+            </SafeAreaView >
         </>
     )
 }

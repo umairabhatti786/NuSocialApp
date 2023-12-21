@@ -23,9 +23,13 @@ const Admins = ({ navigation }: Props) => {
         setValues(newArray);
     }
     return (
-        <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: "15%" }} >
+        <ScreenLayout
+            style={{
+                paddingHorizontal: 30,
+                paddingVertical: 30
+            }} >
             <View style={{
-                height: "100%"
+                height: "100%",
             }}>
                 <CustomMenu2
                     text='Admins'

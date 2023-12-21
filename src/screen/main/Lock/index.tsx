@@ -21,7 +21,7 @@ const Lock = ({ navigation }: Props) => {
           flex: 1,
           marginTop: "10%",
           zIndex: 20,
-          marginHorizontal: 40,
+          marginHorizontal: 30,
         }}
       >
         <View style={{ width: "100%" }}>

@@ -38,15 +38,16 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
   return (
     isVisible && (
       <CustomView
-        angles={130}
+        angles={110}
         outerStyle={{
           position: "absolute",
           top: 50,
           left: -25,
-          zIndex: 50,
+          zIndex: 100,
           justifyContent: "center",
           alignItems: "center",
         }}
+        colors={["#040404", "#040404", "#2E2D2D", "#2E2D2D"]}
         height={550}
         width={250}
         innerButtonStyle={{
@@ -168,7 +169,7 @@ const HomeModal = ({ isVisible, navigation, setIsVisible }: Props) => {
             </TouchableOpacity>
           </>
         )}
-      </CustomView>
+      </CustomView >
     )
   );
 };

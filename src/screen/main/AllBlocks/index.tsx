@@ -38,20 +38,19 @@ const AllBlocks = ({ navigation }: Props) => {
 
   return (
     <ScreenLayout style={{}}>
-      <View
-        style={{
-          marginHorizontal: 20,
-          marginTop: 40,
-          marginBottom: 20
-        }}
-      >
-        <CustomMenu2
-          text="All Block"
-          navigation={navigation}
-          isMail
-        />
-      </View>
       <View style={styles.container}>
+        <View
+          style={{
+            marginTop: 40,
+            marginBottom: 20
+          }}
+        >
+          <CustomMenu2
+            text="All Block"
+            navigation={navigation}
+            isMail
+          />
+        </View>
         <CustomSearch
           style={{ marginTop: "5%" }}
           onChangeText={(x: any) => {
@@ -69,26 +68,27 @@ const AllBlocks = ({ navigation }: Props) => {
           color={colors.primary}
           style={{ marginTop: "8%", marginLeft: 10 }}
         />
-        <FlatList
-          data={trendingBlog}
-          style={{
-            flex: 1,
-          }}
-          scrollEnabled={false}
-          keyExtractor={(item, index) => index.toString()}
-          numColumns={3}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            justifyContent: "center",
-            alignContent: "center",
-            gap: 10,
-            marginTop: 20,
-          }}
-          renderItem={({ item, index }) => {
-            return <ProfileCard item={item} navigation={navigation} />;
-          }}
-        />
+
       </View>
+      <FlatList
+        data={trendingBlog}
+        style={{
+          flex: 1,
+        }}
+        scrollEnabled={false}
+        keyExtractor={(item, index) => index.toString()}
+        numColumns={3}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignContent: "center",
+          gap: 10,
+          marginTop: 20,
+        }}
+        renderItem={({ item, index }) => {
+          return <ProfileCard item={item} navigation={navigation} />;
+        }}
+      />
     </ScreenLayout>
   );
 };

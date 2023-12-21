@@ -18,7 +18,7 @@ type Props = {
 const InviteFriends = ({ navigation }: Props) => {
 
     return (
-        <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: "15%" }} >
+        <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: 30 }} >
             <View style={{
                 height: "100%"
             }}>
@@ -28,7 +28,7 @@ const InviteFriends = ({ navigation }: Props) => {
                 />
                 <View style={{
                     flex: 1,
-                    marginTop: "40%"
+                    marginTop: "40%",
                 }}>
                     <CustomView
                         innerButtonStyle={{
@@ -36,7 +36,7 @@ const InviteFriends = ({ navigation }: Props) => {
                             alignItems: "center",
                             flexDirection: "row",
                             height: 54,
-                            paddingHorizontal: 20
+                            paddingHorizontal: 15
                         }}
                     >
                         <CustomText

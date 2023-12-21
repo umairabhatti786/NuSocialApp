@@ -48,7 +48,6 @@ const ShadowButton2 = ({ text, style, onPress, borderRadius, height, width }: Pr
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: colors.primary,
-                    ...styles?.innerButton
                 }}
             >
                 <CustomText
@@ -63,17 +62,4 @@ const styles = StyleSheet.create({
     button: {
 
     },
-    innerButton: {
-        ...Platform.select({
-            ios: {
-                shadowColor: '#ffffff',
-                shadowOffset: { width: 1.5, height: 1.5 },
-                shadowOpacity: 4,
-                shadowRadius: 4,
-            },
-            android: {
-                elevation: 25,
-            },
-        }),
-    }
 })

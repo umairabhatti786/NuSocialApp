@@ -26,7 +26,7 @@ type Props = {
 
 const Home = ({ navigation }: Props) => {
   const [isLogin, setisLogin] = useState<any>("");
-  const focused=useIsFocused()
+  const focused = useIsFocused()
   useEffect(() => {
     getLogin();
   }, [focused]);
@@ -41,7 +41,7 @@ const Home = ({ navigation }: Props) => {
     <ScreenLayout style={{}}>
       <View style={styles.container}>
         <CustomMenu
-          isLiveChat={isLogin ==="disActive"?false:true}
+          isLiveChat={isLogin === "disActive" ? false : true}
           onPressLiveChat={() => {
             navigation.navigate("LiveChat");
           }}
@@ -64,28 +64,29 @@ const Home = ({ navigation }: Props) => {
           weight={700}
           size={20}
           color={colors.primary}
-          style={{ marginTop: "8%", marginLeft: 10 }}
-        />
-        <FlatList
-          data={trendingBlog}
-          style={{
-            flex: 1,
-          }}
-          scrollEnabled={false}
-          keyExtractor={(item, index) => index.toString()}
-          numColumns={3}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            justifyContent: "center",
-            alignContent: "center",
-            gap: 10,
-            marginTop: 20,
-          }}
-          renderItem={({ item, index }) => {
-            return <ProfileCard item={item} navigation={navigation} />;
-          }}
+          style={{ marginTop: "8%", marginLeft: "4%" }}
         />
       </View>
+      <FlatList
+        data={trendingBlog}
+        style={{
+          flex: 1,
+        }}
+        scrollEnabled={false}
+        keyExtractor={(item, index) => index.toString()}
+        numColumns={3}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignContent: "center",
+          gap: 10,
+          marginTop: 20,
+        }}
+
+        renderItem={({ item, index }) => {
+          return <ProfileCard item={item} navigation={navigation} />;
+        }}
+      />
     </ScreenLayout>
   );
 };
@@ -95,5 +96,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 30,
+    zIndex: 100
   },
 });

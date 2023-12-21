@@ -13,9 +13,10 @@ type Props = {
     width?: any,
     angles?: number,
     borderRadius?: number,
+    colors?: []
 }
 
-const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, angles, borderRadius }: Props) => {
+const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, angles, borderRadius, colors }: Props) => {
     return (
         <View
             style={{
@@ -23,16 +24,16 @@ const CustomView = ({ children, outerStyle, innerButtonStyle, height, width, ang
                 height: height || 45,
                 backgroundColor: '#171616',
                 borderRadius: borderRadius || 12,
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
+                justifyContent: "center",
+                alignItems: "center",
                 position: "relative",
                 ...outerStyle
             }}
         >
             <LinearGradient
                 useAngle={true}
-                angle={angles || 172}
-                colors={["black", "black", "rgba(255, 255, 255, 0.1)", "rgba(255, 255, 255, 0.1)"]}
+                angle={angles || 170}
+                colors={colors || ["#040404", "#040404", "#2E2D2D", "#2E2D2D"]}
                 style={{
                     height: "100%",
                     width: "100%",

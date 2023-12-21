@@ -20,7 +20,7 @@ const ShadowButton = ({ children, style, onPress }: Props) => {
             <LinearGradient
                 useAngle={true}
                 angle={168}
-                colors={["black","rgba(255, 255, 255, 0.15)", "rgba(255, 255, 255, 0.15)"]}
+                colors={["black", "rgba(255, 255, 255, 0.15)", "rgba(255, 255, 255, 0.15)"]}
                 style={{
                     height: "100%",
                     width: "100%",
@@ -31,12 +31,11 @@ const ShadowButton = ({ children, style, onPress }: Props) => {
             <View
                 style={{
                     width: "99%",
-                    height: "96%",
+                    height: "97%",
                     borderRadius: 7,
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: '#171616',
-                    ...styles?.innerButton
                 }}
             >
                 {children}
@@ -56,17 +55,4 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
         position: "relative"
     },
-    innerButton: {
-        ...Platform.select({
-            ios: {
-                shadowColor: '#ffffff',
-                shadowOffset: { width: 1.5, height: 1.5 },
-                shadowOpacity: 4,
-                shadowRadius: 4,
-            },
-            android: {
-                elevation: 25,
-            },
-        }),
-    }
 })

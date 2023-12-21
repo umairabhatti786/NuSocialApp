@@ -28,7 +28,7 @@ const ProfileComplete = ({ navigation }: Props) => {
         setValue,
     });
     return (
-        <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: "10%" }} >
+        <ScreenLayout style={{ paddingHorizontal: 40, paddingVertical: 30 }} >
             <View style={{
                 minHeight: "100%",
             }}>

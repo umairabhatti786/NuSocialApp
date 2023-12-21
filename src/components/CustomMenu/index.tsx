@@ -73,12 +73,6 @@ const CustomMenu = ({
           <></>
         )}
       </TouchableOpacity>
-
-      {/* {isAddButton && (
-        <ShadowButton onPress={onPressAdd}>
-          <Image source={images.add} style={styles.menuButton} />
-        </ShadowButton>
-      )} */}
       <HomeModal
         isVisible={isVisible}
         navigation={navigation}
@@ -95,6 +89,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 25,
     flexDirection: "row",
+    zIndex: 100
   },
   menuButton: {
     width: 24,

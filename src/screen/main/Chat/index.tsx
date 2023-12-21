@@ -41,8 +41,8 @@ const Chat = ({ navigation }: Props) => {
   return (
     <ScrollView
 
-    scrollEnabled={true}
-     style={{ backgroundColor: "#1E1E1E" }}>
+      scrollEnabled={true}
+      style={{ backgroundColor: "#1E1E1E" }}>
       <View style={styles.container}>
         <View
           style={{
@@ -101,7 +101,7 @@ const Chat = ({ navigation }: Props) => {
         <FlatList
           data={chatList2}
           contentContainerStyle={{
-            gap: 5,
+            gap: 12,
             marginBottom: "30%",
           }}
           scrollEnabled={false}
@@ -148,7 +148,7 @@ const Chat = ({ navigation }: Props) => {
                           width: "80%",
                           height: "100%",
                           justifyContent: "center",
-                          gap: 5,
+                          gap: 8,
                           marginLeft: 10,
                         }}
                       >
@@ -190,6 +190,7 @@ const Chat = ({ navigation }: Props) => {
                             borderRadius: 15,
                             justifyContent: "center",
                             alignItems: "center",
+                            overflow: "hidden"
                           }}
                         >
                           <CustomText
